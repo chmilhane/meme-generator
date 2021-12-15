@@ -9,5 +9,5 @@ body {
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  @apply text-white bg-gray-100;
+  @apply bg-gray-100;
 }
