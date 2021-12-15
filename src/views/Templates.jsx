@@ -26,9 +26,16 @@ export default class Templates extends React.Component {
     }
 
     return (
-      <div className="grid grid-cols-4 gap-8">
+      <div style={{
+        columnCount: "auto",
+        columnWidth: "16rem"
+      }}>
         {templates.map((meme, i) => {
-          return (<Template key={i} template={meme} />);
+          return (
+            <div className="mb-4 inline-block">
+              <Template key={i} template={meme} />
+            </div>
+          );
         })}
       </div>
     );

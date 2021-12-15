@@ -1,14 +1,6 @@
 import React from "react";
 import Button from "./Button";
 
-function Link(props) {
-  return (
-    <a href={props.to} target={props.target || "_blank"}>
-      <Button text={props.text} />
-    </a>
-  );
-} 
-
 export default class Navbar extends React.Component {
   constructor() {
     super();
