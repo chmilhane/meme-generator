@@ -11,3 +11,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   @apply bg-gray-100;
 }
+
+*:focus {
+  outline: none;
+}

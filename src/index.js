@@ -7,15 +7,29 @@ import { createStore } from 'redux';
 
 const store = createStore((state, action) => {
   if (typeof state === "undefined") {
-    return 0;
+    return {
+      stepId: 0
+    };
   }
 
   switch (action.type) {
-    case "INCREMENT":
-      return state + 1;
+    case "NEXT_STEP":
+      return {
+        ...state,
+        stepId: state.stepId + 1,
+      };
 
-    case "DECREMENT":
-      return state - 1;
+    case "PREVIOUS_STEP":
+      return {
+        ...state,
+        stepId: state.stepId - 1,
+      };
+
+    case "SET_MEME":
+      return {
+        ...state,
+        meme: action.value
+      };
 
     default:
       return state;
@@ -25,9 +39,7 @@ const store = createStore((state, action) => {
 const render = () => ReactDOM.render(
   <React.StrictMode>
     <App
-      step={store.getState()}
-      onIncrement={() => store.dispatch({ type: "INCREMENT" })}
-      onDecrement={() => store.dispatch({ type: "DECREMENT" })}
+      store={store}
     />
   </React.StrictMode>,
   document.getElementById('root')

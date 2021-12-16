@@ -1,16 +1,19 @@
 import Templates from "./views/Templates";
-import Test from "./views/Test";
+import Boxes from "./views/Boxes";
 
 class Step {
-  constructor(view, hint) {
+  constructor(view, hint, isDisabled) {
     this.view = view
     this.hint = hint;
+    this.isDisabled = isDisabled;
   }
 }
 
 const steps = [
-  new Step(Templates, "1st step"),
-  new Step(Test, "Another step"),
+  new Step(Templates, "Please select a template", store => {
+    return !store.getState().meme;
+  }),
+  new Step(Boxes, "Please fill in the fields")
 ];
 
 export function getStep(id) {

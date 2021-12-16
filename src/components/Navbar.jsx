@@ -29,7 +29,7 @@ export default class Navbar extends React.Component {
         <div className="flex">
           {items.map((item, i) => {
             return (
-              <a className="ml-2" href={item.to} target={item.target || "_blank"}>
+              <a key={i} className="ml-2" href={item.to} target={item.target || "_blank"}>
                 <Button text={item.text} />
               </a>
             );
