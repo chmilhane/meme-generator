@@ -1,10 +1,12 @@
 import fetch from "node-fetch";
 
+const API_URL = process.env.REACT_APP_API_URL || "https://api.imgflip.com";
+
 let memesCache = [];
 export async function getMemes() {
   if (memesCache.length > 0) return Promise.resolve(memesCache);
 
-  return fetch(process.env.REACT_APP_API_URL + "/get_memes")
+  return fetch(API_URL + "/get_memes")
     .then(response => response.json())
     .then(response => {
       if (!response.data) return;
@@ -53,7 +55,7 @@ export default class Meme {
       params.append("boxes[" + key + "][text]", field.text);
     }
 
-    return fetch(process.env.REACT_APP_API_URL + "/caption_image", {
+    return fetch(API_URL + "/caption_image", {
       method: "POST",
       body: params
     })
