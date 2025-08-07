@@ -1,5 +1,7 @@
 <h1 align="center">Welcome to <b>Meme Generator</b> 👋</h1>
 
+**Note:** This was my very first project using React. At the time, I had just switched from Vue.js and was still getting familiar with how React works.
+
 > 😂 Meme Generator using React & imgflip API
 
 ### ✨ [Video](https://www.youtube.com/watch?v=rFSnAlrxCWI)
